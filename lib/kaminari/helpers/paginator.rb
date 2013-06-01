@@ -28,7 +28,7 @@ module Kaminari
         @theme = @options[:theme] ? "#{@options[:theme]}/" : ''
         @window_options.merge! @options
         @window_options[:current_page] = @options[:current_page] = PageProxy.new(@window_options, @options[:current_page], nil)
-
+        @options[:exclude] ||= []
         @last = nil
         # initialize the output_buffer for Context
         @output_buffer = ActionView::OutputBuffer.new
